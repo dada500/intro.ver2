@@ -1,0 +1,239 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Animation classes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-in {
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+}
+
+/* Additional Sophisticated Design Elements */
+section::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, rgba(46, 125, 50, 0.1), rgba(46, 125, 50, 0.7), rgba(46, 125, 50, 0.1));
+    border-radius: 50px;
+}
+
+section h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.container {
+    position: relative;
+}
+
+header h1 {
+    text-shadow: 1px 1px 0px rgba(46, 125, 50, 0.1);
+}
+
+.about-text {
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(46, 125, 50, 0.05);
+    border-left: 4px solid #2e7d32;
+}
+
+.contact-info {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(46, 125, 50, 0.05);
+}
+
+/* Gradient accent for header and footer */
+header, footer {
+    position: relative;
+}
+
+header::after, footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #9be0a8, #2e7d32, #9be0a8);
+}
+
+header::after {
+    bottom: 0;
+}
+
+footer::before {
+    top: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #2e7d32;
+}
+
+section {
+    padding: 80px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    position: relative;
+}
+
+/* Header Styles */
+header {
+    background-color: #f5f9f5;
+    color: #2e7d32;
+    padding: 100px 0;
+    text-align: center;
+    border-bottom: 1px solid #e0e7e0;
+}
+
+header h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+header .subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* About Section */
+#about {
+    background-color: white;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    max-width: 800px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+/* Skills Section */
+#skills {
+    background-color: #f0f7f0;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.skill {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(46, 125, 50, 0.1);
+}
+
+.skill:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.15);
+    border-color: rgba(46, 125, 50, 0.2);
+}
+
+.skill i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #2e7d32;
+}
+
+/* Contact Section */
+#contact {
+    background-color: white;
+}
+
+.contact-info {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-info p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #2e7d32;
+}
+
+/* Footer */
+footer {
+    background-color: #f5f9f5;
+    color: #2e7d32;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #e0e7e0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+    }
+    
+    .skills-container {
+        gap: 20px;
+    }
+    
+    .skill {
+        width: 180px;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+} 
