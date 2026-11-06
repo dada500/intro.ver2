@@ -8,86 +8,90 @@
 :root{--ink:#1d2433;--sub:#5b6577;--line:#d9dee7;--soft:#f3f5f9;--acc:#1f5fbf;--good:#1a7f4b;--bad:#b4362f;--gold:#b7791f}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:#fff}
-body{width:210mm;height:297mm;padding:12mm 13mm 10mm;font-family:NK,sans-serif;color:var(--ink);font-size:9.8pt;line-height:1.5;overflow:hidden}
-header{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2.5px solid var(--ink);padding-bottom:5px;margin-bottom:9px}
+body{width:210mm;height:297mm;padding:11mm 13mm 9mm;font-family:NK,sans-serif;color:var(--ink);font-size:9.7pt;line-height:1.5;overflow:hidden}
+header{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2.5px solid var(--ink);padding-bottom:5px;margin-bottom:8px}
 h1{font-size:18pt;font-weight:900;letter-spacing:-.5px}
 h1 small{font-size:10pt;font-weight:700;color:var(--acc);margin-left:6px}
-.meta{font-size:8pt;color:var(--sub);text-align:right}
-h2{font-size:11pt;font-weight:900;margin:14px 0 6px;display:flex;align-items:center;gap:6px}
+.meta{font-size:7.8pt;color:var(--sub);text-align:right}
+h2{font-size:11pt;font-weight:900;margin:13px 0 6px;display:flex;align-items:center;gap:6px}
 h2 .n{background:var(--ink);color:#fff;border-radius:3px;font-size:8.5pt;padding:0 5px}
-.legend{font-size:8pt;color:var(--sub);margin-bottom:2px}
-.star{color:var(--gold);font-weight:700;letter-spacing:-1px}
+.legend{font-size:7.8pt;color:var(--sub);margin-bottom:3px}
+.star{color:var(--gold);font-weight:700;letter-spacing:-1px;white-space:nowrap}
+.x{color:var(--bad);font-weight:900;white-space:nowrap}
 .flow{display:grid;grid-template-columns:1fr 14px 1fr 14px 1fr;align-items:stretch}
 .flow .arr{display:flex;align-items:center;justify-content:center;color:var(--sub);font-weight:900}
 .box{border:1px solid var(--line);border-radius:6px;padding:6px 8px;background:var(--soft)}
+.box.main{border:1.5px solid var(--good);background:#eaf3ee}
 .box b{display:block;font-size:9.5pt}
-.box span{font-size:8.2pt;color:var(--sub)}
-table{width:100%;border-collapse:collapse;font-size:9pt}
+.box span{font-size:8.1pt;color:var(--sub)}
+.change{margin-top:6px;font-size:8.3pt;background:#fdf3e1;border-left:3px solid var(--gold);padding:4px 8px}
+table{width:100%;border-collapse:collapse;font-size:8.9pt}
 th{background:var(--ink);color:#fff;font-weight:700;text-align:left;padding:4px 6px}
 td{border-bottom:1px solid var(--line);padding:4.5px 6px;vertical-align:top}
 td.stage{font-weight:900;background:var(--soft);white-space:nowrap}
 tr.key td{background:#eaf3ee}
 tr.key td.c{font-weight:900;color:var(--good)}
-.tag{font-size:7.6pt;font-weight:700;border-radius:3px;padding:0 4px;white-space:nowrap}
+tr.out td{background:#fbefee}
+tr.out td.c{color:var(--bad);font-weight:700}
+.tag{font-size:7.5pt;font-weight:700;border-radius:3px;padding:0 4px;white-space:nowrap}
 .f{background:#e3ebf8;color:var(--acc)}.p{background:#e6f4ec;color:var(--good)}.m{background:#fbeaea;color:var(--bad)}.r{background:#eef0f3;color:var(--sub)}
 .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .tile{border:1px solid var(--line);border-radius:6px;padding:6px 8px}
-.tile .q{font-size:8pt;color:var(--sub);font-weight:700}
-.tile .v{font-size:13pt;font-weight:900;letter-spacing:-.3px;margin:1px 0}
-.tile .s{font-size:7.6pt;color:var(--sub)}
+.tile .q{font-size:7.8pt;color:var(--sub);font-weight:700}
+.tile .v{font-size:12.5pt;font-weight:900;letter-spacing:-.3px;margin:1px 0}
+.tile .s{font-size:7.5pt;color:var(--sub)}
 .g{color:var(--good)}.b{color:var(--bad)}
 .rules{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
-.rules div{padding:4px 0 4px 9px;border-left:3px solid var(--acc)}
+.rules div{padding:3px 0 3px 9px;border-left:3px solid var(--acc)}
 .rules div.w{border-color:var(--bad)}
 .rules b{font-weight:900}
-.note{margin-top:9px;font-size:7.8pt;color:var(--sub);border-top:1px solid var(--line);padding-top:5px}
+.note{margin-top:8px;font-size:7.6pt;color:var(--sub);border-top:1px solid var(--line);padding-top:5px}
 </style></head><body>
 <header>
- <h1>다다의 100배주식 <small>종목 선정 기준 &amp; 근거</small></h1>
+ <h1>다다의 100배주식 <small>종목 선정 기준 &amp; 근거 v2</small></h1>
  <div class="meta">2026.11 정리 · 근거 데이터: 다다 엑셀 종목 114개<br>2025.6.17 기준 → 1년 후 / 현재(2026.11.5) 주가 추적</div>
 </header>
 
-<h2><span class="n">1</span>선정 흐름 — 한 줄 요약</h2>
+<h2><span class="n">1</span>선정 흐름 — 재무가 먼저, 차트는 경고등</h2>
 <div class="flow">
- <div class="box"><b>① 자동 필터 (RS·시총)</b><span>오르는 중이고, 100배 갈 만큼 작은 회사만 남긴다</span></div><div class="arr">▶</div>
- <div class="box"><b>② 점수 (조정영업이익)</b><span>조정영업이익이 <b style="display:inline">흑자이고 좋아지는</b> 회사를 우선한다</span></div><div class="arr">▶</div>
+ <div class="box main"><b>① 재무 필터 (핵심)</b><span>조정영업이익이 <b style="display:inline">흑자이고 좋아지는</b> 회사만 남긴다</span></div><div class="arr">▶</div>
+ <div class="box"><b>② 가격·위험 점검</b><span>PJR 20~50이면 가산, 100 초과면 대기, 시총·부채 확인</span></div><div class="arr">▶</div>
  <div class="box"><b>③ 다다 최종 판단</b><span>사업모델·해자·CEO·악재를 AI 리서치로 보고 결론</span></div>
 </div>
+<div class="change"><b>v1에서 바뀐 점:</b> RS 80 이상·이동평균 위는 <b>선정 기준에서 뺌.</b> 검증해보니 RS가 높았던 종목은 1년 땐 더 올랐다가 지금은 오히려 더 많이 빠짐. 이제는 <b>"과열 경고등"</b>으로만 씀.</div>
 
 <h2><span class="n">2</span>기준별 근거</h2>
-<div class="legend"><span class="star">★★★</span> 다다 종목으로 검증됨 &nbsp; <span class="star">★★</span> 외부 연구·업계 관행 (다다 종목으론 미검증) &nbsp; <span class="star">★</span> 다다 메모·경험 (미검증)</div>
+<div class="legend"><span class="star">★★★</span> 다다 종목으로 검증됨 &nbsp; <span class="star">★</span> 다다 메모·경험 (미검증) &nbsp; <span class="x">✕</span> 데이터가 반대로 나와서 제외</div>
 <table>
- <tr><th style="width:9%">단계</th><th style="width:25%">기준</th><th style="width:11%">쓰는 방식</th><th>근거</th><th style="width:8%">강도</th></tr>
- <tr><td class="stage" rowspan="4">① 필터</td><td>RS 80 이상</td><td><span class="tag f">필터</span></td><td>최근 3~12개월 많이 오른 주식이 이후에도 더 오르는 경향 (모멘텀 연구, 오닐 CAN SLIM)</td><td class="star">★★</td></tr>
- <tr><td>주가 &gt; 50일·200일 이동평균</td><td><span class="tag f">필터</span></td><td>상승 추세인 종목만 보는 업계 관행</td><td class="star">★★</td></tr>
- <tr><td>시총 10억~500억불<br>(한국 1조~50조원)</td><td><span class="tag f">필터</span></td><td>엑셀 D1 메모: 100배 주식 출발 시총 중간값 5억불 (인플레 보정 10억~500억). 이미 큰 회사는 100배가 불가능</td><td class="star">★</td></tr>
- <tr><td>하루 거래대금 하한</td><td><span class="tag f">필터</span></td><td>실제로 사고팔 수 있어야 함 (실무상 필요)</td><td>—</td></tr>
- <tr class="key"><td class="stage" rowspan="6">② 점수</td><td><b>조정영업이익률이 좋아지는지</b></td><td><span class="tag p">최대 가산</span></td><td class="c">개선 기업 +8% vs 악화 기업 −31% (현재까지, p=0.002) — 주가와 연관이 확인된 유일한 지표</td><td class="star">★★★</td></tr>
- <tr class="key"><td><b>조정영업이익 흑자인지</b></td><td><span class="tag m">적자=비중↓</span></td><td class="c">현재까지 흑자 +5% vs 적자 −18% (적자는 1년 +42% 급등 후 반납)</td><td class="star">★★★</td></tr>
- <tr><td>PJR 20~50</td><td><span class="tag p">작은 가산</span></td><td>1년 중앙값 +40% (SPY +25%)로 가장 좋았지만 표본이 작아 통계적으로 확실하진 않음</td><td class="star">★</td></tr>
- <tr><td>PJR 100 초과</td><td><span class="tag m">감점</span></td><td>SPY를 이긴 비율 17%로 가장 낮음</td><td class="star">★</td></tr>
- <tr><td>매출 성장률</td><td><span class="tag r">참고만</span></td><td>100배 논리의 핵심이지만 1년 수익률과는 상관없었음 (ρ≈0)</td><td class="star">★</td></tr>
+ <tr><th style="width:9%">단계</th><th style="width:22%">기준</th><th style="width:12%">쓰는 방식</th><th>근거 (중앙값, 미국 종목)</th><th style="width:7%">강도</th></tr>
+ <tr class="key"><td class="stage">① 필터</td><td><b>조정영업이익 흑자 + 개선</b></td><td><span class="tag p">핵심 필터</span></td><td class="c">통과 +12% vs 탈락 −20% (현재까지, p&lt;0.01) — 주가와 연관이 확인된 유일한 기준</td><td class="star">★★★</td></tr>
+ <tr><td class="stage" rowspan="5">② 점검</td><td>PJR 20~50</td><td><span class="tag p">가산</span></td><td>1년 +40% (SPY +25%)로 가장 좋았지만 표본이 작아 확정은 아님</td><td class="star">★</td></tr>
+ <tr><td>PJR 100 초과</td><td><span class="tag m">대기</span></td><td>SPY를 이긴 비율 17%로 가장 낮음</td><td class="star">★</td></tr>
+ <tr><td>시총 10억~500억불<br>(한국 1조~50조원)</td><td><span class="tag r">철학으로 유지</span></td><td>1년 성과는 차이 없음 (p=0.39). 20년 100배 관점의 기준이라 1년으론 검증 불가</td><td class="star">★</td></tr>
+ <tr><td>매출 성장률</td><td><span class="tag r">참고만</span></td><td>1년 수익률과 상관없었음 (ρ≈0)</td><td class="star">★</td></tr>
  <tr><td>부채비율·유동비율</td><td><span class="tag m">위험 시 감점</span></td><td>망할 위험 관리용, 미검증</td><td class="star">★</td></tr>
- <tr><td class="stage">③ 판단</td><td>사업모델·해자·CEO·악재<br>(전환사채, 증여 등)</td><td><span class="tag r">최종 결정</span></td><td>질문 형식 시트 프롬프트로 AI 리서치 → 엑셀 결론 칸에 다다가 직접 기록</td><td>—</td></tr>
+ <tr class="out"><td class="stage" rowspan="2">제외</td><td>RS 80 이상</td><td><span class="tag m">경고등으로만</span></td><td class="c">1년 +42% vs +17%(p=0.41)였지만 현재 −29% vs +3% (p=0.02). 통과 종목의 65%가 적자 테마주</td><td class="x">✕</td></tr>
+ <tr class="out"><td>50·200일선 위</td><td><span class="tag r">제외</span></td><td class="c">통과·탈락 차이 없음 (현재 0% vs −12%, p=0.74)</td><td class="x">✕</td></tr>
+ <tr><td class="stage">③ 판단</td><td>사업모델·해자·CEO·악재</td><td><span class="tag r">최종 결정</span></td><td>질문 형식 시트 프롬프트로 AI 리서치 → 엑셀 결론 칸에 다다가 직접 기록</td><td>—</td></tr>
 </table>
 
 <h2><span class="n">3</span>핵심 숫자 4개</h2>
 <div class="tiles">
- <div class="tile"><div class="q">조정영업이익 개선 vs 악화</div><div class="v"><span class="g">+8%</span> vs <span class="b">−31%</span></div><div class="s">현재까지 수익률 중앙값 · p=0.002</div></div>
- <div class="tile"><div class="q">흑자 vs 적자 (조정영익)</div><div class="v"><span class="g">+5%</span> vs <span class="b">−18%</span></div><div class="s">현재까지 · 1년 땐 적자가 +42%로 더 높았음</div></div>
- <div class="tile"><div class="q">PJR 20~50 구간</div><div class="v"><span class="g">+40%</span></div><div class="s">1년 중앙값 · SPY +25% · 확정 아님</div></div>
- <div class="tile"><div class="q">PJR 숫자 vs 주가 상관</div><div class="v">ρ ≈ 0</div><div class="s">PER·PSR도 동일 → 배수로 판정 X</div></div>
+ <div class="tile"><div class="q">흑자 + 개선 vs 나머지</div><div class="v"><span class="g">+12%</span> vs <span class="b">−20%</span></div><div class="s">현재까지 중앙값 · p&lt;0.01</div></div>
+ <div class="tile"><div class="q">RS 80 이상 종목</div><div class="v"><span class="g">+42%</span> → <span class="b">−29%</span></div><div class="s">1년 시점 → 현재까지</div></div>
+ <div class="tile"><div class="q">RS 80 이상 + 적자</div><div class="v"><span class="g">+53%</span> → <span class="b">−42%</span></div><div class="s">13종목 · 테마 급등 후 반납</div></div>
+ <div class="tile"><div class="q">v1 필터 3개 모두 통과</div><div class="v"><span class="b">−31%</span></div><div class="s">11종목 · 현재까지 (나머지 +2%)</div></div>
 </div>
 
 <h2><span class="n">4</span>실전 매수 원칙</h2>
 <div class="rules">
- <div><b>흑자 + 조정영업이익 개선</b> → 비중 실어도 되는 후보</div>
- <div class="w"><b>적자 기업</b> → RS가 높아도 "적게만 담기" (급등 후 반납 패턴)</div>
+ <div><b>사는 이유는 재무</b> → 흑자 + 조정영업이익 개선이 먼저, 차트는 그다음</div>
+ <div class="w"><b>RS 높고 적자 = 과열</b> → 신규는 소액만, 보유 중이면 일부 익절</div>
  <div><b>PJR 20~50</b> → 사려고 노력하는 가격대 (기다려서 사기)</div>
- <div class="w"><b>PJR 100 초과</b> → 지금은 말고 가격 내려올 때까지 대기</div>
+ <div class="w"><b>이미 급등한 종목 쫓지 않기</b> → 흑자+개선 안에서도 RS 높은 쪽이 현재 −1% vs +33%</div>
  <div><b>PJR은 참고용</b> → 숫자 하나로 사고팔지 않기</div>
- <div class="w"><b>숫자는 원천 공시로 확인</b> → AI 표 오류 多 (ORCL 시총 476억불로 오입력, 실제 약 5,700억불)</div>
+ <div class="w"><b>숫자는 원천 공시로 확인</b> → AI 표 오류 多 (ORCL 시총 476억불 오입력, 실제 약 5,700억불)</div>
 </div>
 
-<div class="note"><b>한계</b> — 한 기간(2025.6~2026.11), 다다가 고른 종목군이라 시장 전체로 일반화는 어려움. ① 필터(RS·이동평균·시총)는 아직 다다 종목으로 검증 전 → 다음 단계에서 같은 방식으로 검증 예정. 투자 권유가 아닌 개인 연구 기록.</div>
+<div class="note"><b>한계</b> — RS 순위는 시장 전체가 아니라 다다 종목 114개 안에서 매김. 양자·원전·우주 테마가 급등했다 빠진 한 기간(2025.6~2026.11)의 결과라서 "모멘텀은 틀렸다"는 일반론은 아님. 종목군이 다다가 고른 성장주 위주라 시장 전체로 일반화는 어려움. 투자 권유가 아닌 개인 연구 기록.</div>
 </body></html>
